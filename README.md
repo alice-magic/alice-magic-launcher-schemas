@@ -1,6 +1,6 @@
 
 [Download Alice Magic Launcher](https://launcher.furi.moe/en) | [Furimoe](https://furi.moe)
-
+ 
 # Alice Magic Launcher Schemas
 
 This repository documents the JSON schemas for **Alice Magic Launcher** Minecraft instances, including both the **instance configuration** and the **instance manifest**.
