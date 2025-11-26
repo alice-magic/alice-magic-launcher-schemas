@@ -1,4 +1,3 @@
-
 [Download Alice Magic Launcher](https://launcher.furi.moe/en) | [Furimoe](https://furi.moe)
  
 # Alice Magic Launcher Schemas
@@ -19,6 +18,7 @@ This repository documents the JSON schemas for **Alice Magic Launcher** Minecraf
     - [Item Fields](#item-fields)
     - [Manifest Example](#manifest-example)
   - [DNS Config](#dns-config)
+  - [HTTP Header Verification in Alice Magic Launcher](#http-header-verification-in-alice-magic-launcher)
 
 ---
 
@@ -37,6 +37,7 @@ Schema for configuring an **Alice Magic Launcher Minecraft instance**.
 | `name`        | string | Unique identifier for the instance (lowercase letters, numbers, hyphens, underscores). |
 | `displayName` | string | Name of the instance.                                                                  |
 | `description` | string | A brief description of the instance.                                                   |
+| `onlineMode`  | boolean | Whether the instance requires online authentication.                                   |
 | `minecraft`   | object | Minecraft version and loader configuration.                                            |
 
 ### Properties
@@ -64,6 +65,7 @@ Schema for configuring an **Alice Magic Launcher Minecraft instance**.
   "displayName": "Alice Magic: Furiora's World",
   "description": "A modded Minecraft experience with adventure.",
   "icon": "https://cdn.masuru.in.th/HamF2Hsoirx4K9DL.webp",
+  "onlineMode": true,
   "minecraft": {
     "version": "1.21.8",
     "loader": {
@@ -149,3 +151,16 @@ _alicemagiclauncher.play TXT "play.furi.moe|<Instance Configuration URL>|<Instan
 Replace `<Instance Configuration URL>` and `<Instance Manifest URL>` with the actual URLs.
 
 You can search for an instance using the IP (e.g., `play.furi.moe`) or any IP that is configured with the above DNS TXT record.
+
+---
+
+## HTTP Header Verification in Alice Magic Launcher
+
+**Note:** Every request to URLs (such as downloading the manifest or instance files) will include two additional HTTP headers. These allow the server to verify the user and online status.
+
+| Header   | Type    | Description                                  |
+|----------|---------|----------------------------------------------|
+| `x-uuid` | string  | UUID of the player/device running the launcher |
+| `online` | boolean | Online Account (`true` or `false`)              |
+
+These headers help servers identify requests coming from Alice Magic Launcher and can be used for analytics or access control.
