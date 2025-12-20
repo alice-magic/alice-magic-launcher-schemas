@@ -160,7 +160,7 @@ You can search for an instance using the IP (e.g., `play.furi.moe`) or any IP th
 
 | Header   | Type    | Description                                  |
 |----------|---------|----------------------------------------------|
-| `x-uuid` | string  | UUID of the player/device running the launcher |
+| `x-uuid` | string  | UUID of the player (EX: `8518f0b2-d106-4c39-88d5-c7da11c91bbe`) |
 | `online` | boolean | Online Account (`true` or `false`)              |
 
 These headers help servers identify requests coming from Alice Magic Launcher and can be used for analytics or access control.
