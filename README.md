@@ -114,7 +114,7 @@ Schema for the manifest of required files for a Minecraft instance.
 | `path` | string       | Relative path of the file in the instance.      |
 | `url`  | string (URI) | Download URL of the file.                       |
 | `size` | integer      | File size in bytes.                             |
-| `hash` | string       | SHA-1 or other hash for integrity verification. |
+| `hash` | string       | SHA-1                                           |
 
 ### Manifest Example
 
